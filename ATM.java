@@ -72,9 +72,11 @@ public class ATM{
                     break;
 
                 default:
+                    sc.close();
                     System.exit(0);
                     break;
             }
+            sc.close();
         }
         
     }
@@ -93,7 +95,7 @@ public class ATM{
         System.out.println("\n\n\tEnter Any Other Number To Exit");
         System.out.println("\n\n\t\tEnter Your Choice");
         int choice = sc.nextInt();
-
+        sc.close();
         balance = user.getBalance();
         switch(choice){
             case 0:
@@ -179,7 +181,7 @@ public class ATM{
         System.out.println("\t-----------------------------------------");
         System.out.println("\n\t\tEnter the amount : ");
         int p = sc.nextInt();
-
+        sc.close();
         if(p>0){
             balance += p;
             user.setBalance(balance);
@@ -204,6 +206,7 @@ public class ATM{
         System.out.println("\n\tEnter any other number to Exit");
 
         int choice = sc.nextInt();
+        sc.close();
         if(choice==1){
             return;
         }
@@ -228,7 +231,7 @@ public class ATM{
         String n = sc.next();
         System.out.println("\tEnter the pin");
         int p = sc.nextInt();
-
+        sc.close();
         boolean temp = checkIsTrue(n, p);
 
         if(temp==false){
@@ -264,6 +267,6 @@ public class ATM{
             System.out.println("\n\tPlease Enter A Valid Amount");
             withdraw();
         }   
-        
+        sc.close();
     }
 }
